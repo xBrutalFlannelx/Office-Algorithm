@@ -7,7 +7,7 @@ public class DBConnect {
     String driver = "com.mysql.cj.jdbc.Driver";
     String url = "jdbc:mysql://localhost:3306/office_algorithm";
     String user = "bflanz";
-    String pwd = "ChromaSucks420!";
+    String pwd = "";
 
     Connection conn;
     Statement stm;
