@@ -11,7 +11,7 @@ insert pending admin in DB
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="../adminCSS.css"/>
         <%@include file="../header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Create new admin</title>
@@ -26,10 +26,10 @@ insert pending admin in DB
 
                 DBConnect dbConnect = new DBConnect();
 
-                String sql = "INSERT into admin (email, username, password, status) values ('"
+                String sql = "INSERT into office_algorithm.admin (email, username, password, status) values ('"
                         + email + "', '" + username + "', '" + password + "', 'Pending')";
 
-                String duplicate = "Select adminID FROM Admin where Username = '"
+                String duplicate = "Select adminID FROM office_algorithm.admin where Username = '"
                         + username + "' or email = '" + email + "'";
 
                 ResultSet existingAccount = dbConnect.DBQuery(duplicate);

@@ -12,7 +12,7 @@ pendingOnClick.jsp/approvedOnClick.jsp update DB accordingly
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="../adminCSS.css"/>
         <%@include file="../header.jsp" %>
         <script src="../password.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -29,14 +29,14 @@ pendingOnClick.jsp/approvedOnClick.jsp update DB accordingly
             <br>
             <div class='container boxedTitle lightToDarkBottom' style='color:white'><br><h1><%=name%></h1><br></div>
                     <%  //print table of account info and inventory regardless of status
-                        String info = "select supplierID, username, email, status from supplier where name = '"
+                        String info = "select supplierID, username, email, status from office_algorithm.supplier where name = '"
                                 + name + "'";
 
                         ResultSet supplierQuery = dbConnect.DBQuery(info);
                         supplierQuery.next();
 
-                        String stock = "select stock.item, stock.available, stock.ordered, stock.cost from stock "
-                                + "INNER JOIN supplierstock on stock.stockID = supplierstock.stockID where supplierstock.supplierID = '"
+                        String stock = "select stock.item, stock.available, stock.ordered, stock.cost from office_algorithm.stock "
+                                + "INNER JOIN office_algorithm.supplierstock on stock.stockID = supplierstock.stockID where supplierstock.supplierID = '"
                                 + supplierQuery.getString(1) + "'";
 
                         ResultSet stockSet = dbConnect.DBQuery(stock);

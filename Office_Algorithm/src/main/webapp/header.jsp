@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+    <link rel="stylesheet" href="adminCSS.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
     <script>
         function preventBack() {
@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="jumbotron-fluid midLightToMidDark text-light">
-        <img src="/OfficeAlgorithm/-images/logo.jpg" alt="Office Algorithm" style="width:125px; height:125x;"%>
+        <img src="-images/logo.jpg" alt="Office Algorithm" style="width:125px; height:125x;"%>
         <h3 class='display-3' style="display: inline-block; vertical-align: bottom; font-size: 80px"> Office Algorithm</h3>
         <%
             String logged = (String) session.getAttribute("logged");
@@ -32,43 +32,43 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-darkest">
-        <a id="home" class="navbar-brand" href="/OfficeAlgorithm/index.jsp">Home</a>
+        <a id="home" class="navbar-brand" href="index.jsp">Home</a>
         <ul class="navbar-nav">
             <%
                 // Login Check
                 if (logged == null) {
                     out.print("<li class='nav-item'>"
-                            + "<a class='nav-link' href='/OfficeAlgorithm/login.jsp'>Login</a></li>"
+                            + "<a class='nav-link' href='login.jsp'>Login</a></li>"
                             + "<li class='nav-item'>"
-                            + "<a class='nav-link' href='/OfficeAlgorithm/register.jsp'>  Register</a></li>");
+                            + "<a class='nav-link' href='register.jsp'>  Register</a></li>");
                 } else if (logged == "admin") {
                     // If logged in display new page options
                     out.print("<li class='nav-item'>"
-                            + "<a class='nav-link' href='/OfficeAlgorithm/-admin/adminAction.jsp'>" + user + " Home</a></li>"
+                            + "<a class='nav-link' href='../-admin/adminAction.jsp'>" + user + " Home</a></li>"
                             + "<li class='nav-item'>"
-                            + "<a class='nav-link' href='/OfficeAlgorithm/-supplier/approvedSupplier.jsp'>Approved Suppliers</a></li>"
+                            + "<a class='nav-link' href='../-supplier/approvedSupplier.jsp'>Approved Suppliers</a></li>"
                             + "<li class='nav-item'>"
-                            + "<a class='nav-link' href='/OfficeAlgorithm/-supplier/pendingSupplier.jsp'>Pending Suppliers</a></li>"
+                            + "<a class='nav-link' href='../-supplier/pendingSupplier.jsp'>Pending Suppliers</a></li>"
                             + "<li class='nav-item'>"
-                            + "<a class='nav-link' href='/OfficeAlgorithm/-customer/queryCustomer.jsp'>Customer Orders</a></li>"
+                            + "<a class='nav-link' href='../-customer/queryCustomer.jsp'>Customer Orders</a></li>"
                             + "<li class='nav-item'>"
-                            + "<a class='nav-link' href='/OfficeAlgorithm/-admin/adminCreation.jsp'>Admin Creation</a></li>"
+                            + "<a class='nav-link' href='-admin/adminCreation.jsp'>Admin Creation</a></li>"
                             + "<li class='nav-item'>"
-                            + "<a class='nav-link' href='/OfficeAlgorithm/logout.jsp'>Logout</a></li>");
+                            + "<a class='nav-link' href='logout.jsp'>Logout</a></li>");
                     //customer and supplier home currently redirect to index         
                 } else if (logged == "customer") {
 
                     out.print("<li class='nav-item'>"
-                            + "<a class='nav-link' href='/OfficeAlgorithm/index.jsp'>" + user + " Home</a></li>"
+                            + "<a class='nav-link' href='index.jsp'>" + user + " Home</a></li>"
                             + "<li class='nav-item'>"
-                            + "<a class='nav-link' href='/OfficeAlgorithm/logout.jsp'>Logout</a></li>");
+                            + "<a class='nav-link' href='logout.jsp'>Logout</a></li>");
 
                 } else if (logged == "supplier") {
 
                     out.print("<li class='nav-item'>"
-                            + "<a class='nav-link' href='/OfficeAlgorithm/index.jsp'>" + user + " Home</a></li>"
+                            + "<a class='nav-link' href='index.jsp'>" + user + " Home</a></li>"
                             + "<li class='nav-item'>"
-                            + "<a class='nav-link' href='/OfficeAlgorithm/logout.jsp'>Logout</a></li>");
+                            + "<a class='nav-link' href='logout.jsp'>Logout</a></li>");
 
                 }
             %>

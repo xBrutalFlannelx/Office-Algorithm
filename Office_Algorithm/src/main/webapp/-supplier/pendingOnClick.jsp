@@ -11,7 +11,7 @@ confirmation page displayed before update
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="../adminCSS.css"/>
         <%@include file="../header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Confirmation</title>
@@ -43,14 +43,14 @@ confirmation page displayed before update
                 <br>
                 <br>
                 <%
-                    ResultSet updateStock = dbConnect.DBQuery("Select stockID from supplierstock where supplierID = '"
+                    ResultSet updateStock = dbConnect.DBQuery("Select stockID from office_algorithm.supplierstock where supplierID = '"
                             + supplierID + "'");
                     // if approve is confirmed
                     if (status.equals("confirmApprove")) {
 
                         while (updateStock.next()) {
 
-                            String approveStock = dbConnect.updateDB("update stock set status = 'Approved' where stockID = '"
+                            String approveStock = dbConnect.updateDB("update office_algorithm.stock set status = 'Approved' where stockID = '"
                                     + updateStock.getString(1) + "'");
                             if (!approveStock.equals("Update Successful")) {
                                 out.print("<br><h2 class='centered'>Error: Please try again</h2></div>");
@@ -58,7 +58,7 @@ confirmation page displayed before update
                             }
                         }
 
-                        String approveSupplier = dbConnect.updateDB("update supplier set status = 'Approved' where supplierID = '"
+                        String approveSupplier = dbConnect.updateDB("update office_algorithm.supplier set status = 'Approved' where supplierID = '"
                                 + supplierID + "'");
                         if (approveSupplier.equals("Update Successful")) {
 
@@ -76,14 +76,14 @@ confirmation page displayed before update
                     //if deny is confirmed
                     if (status.equals("confirmDeny")) {
 
-                        String denyStock = dbConnect.updateDB("delete from supplierstock where supplierID = '"
+                        String denyStock = dbConnect.updateDB("delete from office_algorithm.supplierstock where supplierID = '"
                                 + supplierID + "'");
-                        String denySupplier = dbConnect.updateDB("delete from supplier where supplierID = '"
+                        String denySupplier = dbConnect.updateDB("delete from office_algorithm.supplier where supplierID = '"
                                 + supplierID + "'");
 
                         while (updateStock.next()) {
 
-                            String deleteStock = dbConnect.updateDB("delete from stock where stockID = '"
+                            String deleteStock = dbConnect.updateDB("delete from office_algorithm.stock where stockID = '"
                                     + updateStock.getString(1) + "'");
                             if (!deleteStock.equals("Update Successful")) {
                                 out.print("<br><h2 class='centered'>Error: Please try again</h2></div>");

@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="../adminCSS.css"/>
         <%@include file="../header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Edit Order</title>
@@ -27,7 +27,7 @@
                 //paramater name = stockID and its value = new order quantity
                 //start i at 2 to account for orderID and customerID parameters
                 int i = 2;
-                ResultSet stock = dbConnect.DBQuery("select stockID from stock");
+                ResultSet stock = dbConnect.DBQuery("select stockID from office_algorithm.stock");
 
                 //allocate array sizes based on total DB stock
                 while (stock.next()) {
@@ -51,9 +51,9 @@
                         paramName[i] = tempName;
                         paramValue[i] = request.getParameter(paramName[i]);
 
-                        ResultSet avail = dbConnect.DBQuery("select available from stock where stockID = '" + paramName[i] + "'");
+                        ResultSet avail = dbConnect.DBQuery("select available from office_algorithm.stock where stockID = '" + paramName[i] + "'");
 
-                        ResultSet orderQuant = dbConnect.DBQuery("select quantity from stockpurchase where stockID = '"
+                        ResultSet orderQuant = dbConnect.DBQuery("select quantity from office_algorithm.stockpurchase where stockID = '"
                                 + paramName[i] + "' and purchaseID = '" + orderID + "'");
 
                         avail.next();
@@ -63,7 +63,7 @@
                         int orderQuan = Integer.parseInt(orderQuant.getString(1));
                         int newQuan = Integer.parseInt(paramValue[i]);
                         //update order item quantity in DB
-                        String updateOrder = "update stockpurchase set quantity = '" + paramValue[i] + "' where stockID = '"
+                        String updateOrder = "update office_algorithm.stockpurchase set quantity = '" + paramValue[i] + "' where stockID = '"
                                 + paramName[i] + "' and purchaseID = '" + orderID + "'";
 
                         //calculate new # of available
@@ -76,11 +76,11 @@
                         if (newQuan == 0) {
                             //overwrite updateorder string to delete entry from DB
                             available += orderQuan;
-                            updateOrder = "delete from stockpurchase where stockID = '"
+                            updateOrder = "delete from office_algorithm.stockpurchase where stockID = '"
                                     + paramName[i] + "' and purchaseID = '" + orderID + "'";
                         }
                         //update avail in DB
-                        String updateAvail = "update stock set available = '" + available + "' where stockID = '"
+                        String updateAvail = "update office_algorithm.stock set available = '" + available + "' where stockID = '"
                                 + paramName[i] + "'";
 
                         String modify = dbConnect.updateDB(updateOrder);

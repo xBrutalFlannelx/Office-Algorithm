@@ -13,7 +13,7 @@ form submits back to registerAction.jsp to add stock to DB
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="adminCSS.css"/>
         <%@include file="header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Submit Account</title>
@@ -44,14 +44,14 @@ form submits back to registerAction.jsp to add stock to DB
                     String avail = request.getParameter("avail");
 
                     //insert stock
-                    String stock = "INSERT into stock (item, cost, available, ordered, status) values ('"
+                    String stock = "INSERT into office_algorithm.stock (item, cost, available, ordered, status) values ('"
                             + item + "', '" + cost + "', '" + avail + "', '0', 'Pending')";
                     String message = dbConnect.updateDB(stock);
                     //find stockID of new insert
-                    ResultSet stockID = dbConnect.DBQuery("Select stockID from stock where item = '" + item + "'");
+                    ResultSet stockID = dbConnect.DBQuery("Select stockID from office_algorithm.stock where item = '" + item + "'");
                     stockID.next();
                     //insert relation into supplierstock
-                    String message1 = dbConnect.updateDB("INSERT into supplierstock (supplierID, stockID) values ('"
+                    String message1 = dbConnect.updateDB("INSERT into office_algorithm.supplierstock (supplierID, stockID) values ('"
                             + supplierID + "', '" + stockID.getString(1) + "')");
                     //if both successfull create success message to return to login.jsp and autosubmit form
                     if (message.equals("Update Successful") && message1.equals("Update Successful")) {
@@ -68,10 +68,10 @@ form submits back to registerAction.jsp to add stock to DB
                 //if customer form submitted
                 if (form.equals("customer")) {
 
-                    String customer = "INSERT into customer (email, username, password, firstname, lastname, paymethod) values ('"
+                    String customer = "INSERT into office_algorithm.customer (email, username, password, firstname, lastname, paymethod) values ('"
                             + email + "', '" + username + "', '" + password + "', '" + first + "', '" + last + "', '" + pay + "')";
 
-                    String duplicate = "Select customerID FROM customer where Username = '"
+                    String duplicate = "Select customerID FROM office_algorithm.customer where Username = '"
                             + username + "' or email = '" + email + "'";
 
                     ResultSet existingAccount = dbConnect.DBQuery(duplicate);
@@ -97,10 +97,10 @@ form submits back to registerAction.jsp to add stock to DB
                 //if supplier form submitted
                 if (form.equals("supplier")) {
 
-                    String supplier = "INSERT into supplier (email, username, password, name, status) values ('"
+                    String supplier = "INSERT into office_algorithm.supplier (email, username, password, name, status) values ('"
                             + email + "', '" + username + "', '" + password + "', '" + company + "', 'Pending')";
 
-                    String duplicate = "Select supplierID FROM supplier where Username = '"
+                    String duplicate = "Select supplierID FROM office_algorithm.supplier where Username = '"
                             + username + "' or email = '" + email + "'";
 
                     ResultSet existingAccount = dbConnect.DBQuery(duplicate);
@@ -114,7 +114,7 @@ form submits back to registerAction.jsp to add stock to DB
                             out.print("<br><div class='container boxedTitle lightToDarkBottom' style='color:white'>"
                                     + "<br><h1>Please Submit Inventory Below</h1><br></div><br>");
                             //query DB for new account key and print form
-                            ResultSet pendingItems = dbConnect.DBQuery("Select supplierID from supplier where name = '" + company + "'");
+                            ResultSet pendingItems = dbConnect.DBQuery("Select supplierID from office_algorithm.supplier where name = '" + company + "'");
                             try {
                                 pendingItems.next();
                             } catch (Exception e) {

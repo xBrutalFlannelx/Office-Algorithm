@@ -12,16 +12,16 @@ and links to login or signup
 
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="adminCSS.css"/>
         <%@include file="header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Office Algorithm</title>
     </head>
     <body>
         <div class="bg">
-            <%                
+            <%                    
                 DBConnect dbConnect = new DBConnect();
-                String approvedItems = "Select item, cost, available, status from stock where Status = 'Approved'";
+                String approvedItems = "Select item, cost, available, status from office_algorithm.stock where Status = 'Approved'";
                 ResultSet itemsForSale = dbConnect.validatePwd(approvedItems);
 
                 try {

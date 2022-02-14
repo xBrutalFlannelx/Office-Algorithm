@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="../adminCSS.css"/>
         <%@include file="../header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Edit Order</title>
@@ -61,7 +61,7 @@
             <% }
                 if (option.equals("confirmship")) {
                     //update DB to display order as shipped and redirect success message
-                    String ship = dbConnect.updateDB("update purchase set status = 'Shipped' where purchaseID = '"
+                    String ship = dbConnect.updateDB("update office_algorithm.purchase set status = 'Shipped' where purchaseID = '"
                             + orderID + "'");
                     if (ship.equals("Update Successful")) {
                         shipSuccess = "Success: Order # " + orderID + " Shipped";
@@ -80,9 +80,9 @@
                 }
                 if (option.equals("confirmcancel")) {
                     //delete order from DB
-                    String stockPurchase = "delete from stockpurchase where purchaseID = '"
+                    String stockPurchase = "delete from office_algorithm.stockpurchase where purchaseID = '"
                             + orderID + "'";
-                    String purchase = "delete from purchase where purchaseID = '"
+                    String purchase = "delete from office_algorithm.purchase where purchaseID = '"
                             + orderID + "'";
 
                     String cancel = dbConnect.updateDB(stockPurchase);
@@ -108,9 +108,9 @@
                 if (option.equals("modify")) {
                     //display order with input fields to update quantities
                     //updateOrder.jsp calculates changes and modifies DB
-                    String stock = "select stock.item, stock.available, stock.stockID from stock INNER JOIN stockpurchase on stock.stockID = stockpurchase.stockID where stockpurchase.purchaseID = '"
+                    String stock = "select stock.item, stock.available, stock.stockID from office_algorithm.stock INNER JOIN office_algorithm.stockpurchase on stock.stockID = stockpurchase.stockID where stockpurchase.purchaseID = '"
                             + orderID + "'";
-                    String quant = "select quantity from stockpurchase INNER JOIN stock on stockpurchase.stockID = stock.stockID where stockpurchase.purchaseID = '"
+                    String quant = "select quantity from office_algorithm.stockpurchase INNER JOIN office_algorithm.stock on stockpurchase.stockID = stock.stockID where stockpurchase.purchaseID = '"
                             + orderID + "'";
 
                     ResultSet item = dbConnect.DBQuery(stock);

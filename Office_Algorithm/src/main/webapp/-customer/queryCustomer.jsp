@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="../adminCSS.css"/>
         <%@include file="../header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Customers</title>
@@ -19,7 +19,7 @@
         <div class="bg">
             <%                
                 DBConnect dbConnect = new DBConnect();
-                String customer = "Select customerID, firstname, lastname, email FROM customer";
+                String customer = "Select customerID, firstname, lastname, email FROM office_algorithm.customer";
                 ResultSet rst = dbConnect.DBQuery(customer);
 
                 if (!rst.next()) {

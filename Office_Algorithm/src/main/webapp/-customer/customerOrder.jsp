@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="../adminCSS.css"/>
         <%@include file="../header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Order Query</title>
@@ -22,7 +22,7 @@
                 String customerID = request.getParameter("customerID");
                 String message = request.getParameter("message");
                 
-                String customer = "select firstname, lastname, email from customer where customerID = '" + customerID + "'";
+                String customer = "select firstname, lastname, email from office_algorithm.customer where customerID = '" + customerID + "'";
                 ResultSet rst = dbConnect.DBQuery(customer);
                 
                 if (message != null) {
@@ -37,7 +37,7 @@
             %>
             <br>
             <%
-                String order = "select purchaseID, date, status from purchase where customerID = '" + customerID + "'";
+                String order = "select purchaseID, date, status from office_algorithm.purchase where customerID = '" + customerID + "'";
                 ResultSet orders = dbConnect.DBQuery(order);
 
                 if (!orders.next()) {
@@ -47,12 +47,12 @@
                     orders.beforeFirst();
                     while (orders.next()) {
 
-                        String orderQuery = "select stock.item, stock.cost from stock "
-                                + "INNER JOIN stockpurchase on stock.stockID = stockpurchase.stockID where stockpurchase.purchaseID = '"
+                        String orderQuery = "select stock.item, stock.cost from office_algorithm.stock "
+                                + "INNER JOIN office_algorithm.stockpurchase on stock.stockID = stockpurchase.stockID where stockpurchase.purchaseID = '"
                                 + orders.getString(1) + "'";
 
-                        String quantity = "select quantity from stockpurchase "
-                                + "INNER JOIN stock on stockpurchase.stockID = stock.stockID where stockpurchase.purchaseID = '" + orders.getString(1) + "'";
+                        String quantity = "select quantity from office_algorithm.stockpurchase "
+                                + "INNER JOIN office_algorithm.stock on stockpurchase.stockID = stock.stockID where stockpurchase.purchaseID = '" + orders.getString(1) + "'";
 
                         ResultSet item = dbConnect.DBQuery(orderQuery);
                         ResultSet itemQuantity = dbConnect.DBQuery(quantity);

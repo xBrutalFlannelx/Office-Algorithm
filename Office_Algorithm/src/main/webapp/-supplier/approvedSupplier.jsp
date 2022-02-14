@@ -10,7 +10,7 @@ clicking on a name leads to querySupplier.jsp to manage/order stock
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="../adminCSS.css"/>
         <%@include file="../header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Approved Suppliers</title>
@@ -19,7 +19,7 @@ clicking on a name leads to querySupplier.jsp to manage/order stock
         <div class="bg">
             <%            
                 DBConnect dbConnect = new DBConnect();
-                String approvedQuery = "Select Name FROM Supplier where Status = 'Approved'";
+                String approvedQuery = "Select Name FROM office_algorithm.supplier where Status = 'Approved'";
                 ResultSet approved = dbConnect.DBQuery(approvedQuery);
 
                 if (!approved.next()) {

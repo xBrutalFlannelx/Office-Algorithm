@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="adminCSS.css"/>
         <%@include file="header.jsp" %>
         <script src="password.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

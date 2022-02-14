@@ -10,7 +10,7 @@ List hyperlinks of all pages available to admin
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="../adminCSS.css"/>
         <%@include file="../header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Admin Home</title>
@@ -25,11 +25,11 @@ List hyperlinks of all pages available to admin
             <div class="container boxedWhite" align="center">
                 <table border="0">
                     <br>
-                    <a style="font-size: 25px" href="/OfficeAlgorithm/-supplier/approvedSupplier.jsp">Approved Suppliers</a>
+                    <a style="font-size: 25px" href="../-supplier/approvedSupplier.jsp">Approved Suppliers</a>
                     <br> <br>
-                    <a  style="font-size: 25px" href="/OfficeAlgorithm/-supplier/pendingSupplier.jsp">Pending Suppliers</a>
+                    <a  style="font-size: 25px" href="../-supplier/pendingSupplier.jsp">Pending Suppliers</a>
                     <br> <br>
-                    <a style="font-size: 25px" href="/OfficeAlgorithm/-customer/queryCustomer.jsp">Customer Orders</a>
+                    <a style="font-size: 25px" href="../-customer/queryCustomer.jsp">Customer Orders</a>
                     <br> <br>
                     <a style="font-size: 25px" href="adminCreation.jsp">Admin Creation</a>
                     <br> <br>

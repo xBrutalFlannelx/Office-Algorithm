@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="../adminCSS.css"/>
         <%@include file="../header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Update Password</title>
@@ -22,7 +22,7 @@
 
                 DBConnect dbConnect = new DBConnect();
 
-                String message = dbConnect.updateDB("update admin set password = '"
+                String message = dbConnect.updateDB("update office_algorithm.admin set password = '"
                         + newPass + "', status = 'Approved' where username = '"
                         + username + "'");
                 //if password and status update is successful, send username and updated

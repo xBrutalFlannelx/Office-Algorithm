@@ -11,7 +11,7 @@ Currently Suppliers/Customers can only create accounts, login and logout
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="adminCSS.css"/>
         <script src="password.js"></script>
         <%@include file="header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -24,11 +24,11 @@ Currently Suppliers/Customers can only create accounts, login and logout
                 String username = request.getParameter("username");
                 String password = request.getParameter("password");
 
-                String validateAdmin = "Select adminID, status FROM Admin where username = '"
+                String validateAdmin = "Select adminID, status FROM office_algorithm.admin where username = '"
                         + username + "' and password = '" + password + "'";
-                String validateCustomer = "Select customerID FROM customer where username = '"
+                String validateCustomer = "Select customerID FROM office_algorithm.customer where username = '"
                         + username + "' and password = '" + password + "'";
-                String validateSupplier = "Select supplierID, status FROM supplier where username = '"
+                String validateSupplier = "Select supplierID, status FROM office_algorithm.supplier where username = '"
                         + username + "' and password = '" + password + "'";
 
                 DBConnect dbConnect = new DBConnect();
@@ -85,7 +85,7 @@ Currently Suppliers/Customers can only create accounts, login and logout
                 }
                 //pending admin requires password change to proceed
             %>
-            <form name='updatePass' action='/OfficeAlgorithm/-admin/adminPass.jsp' method='post'>
+            <form name='updatePass' action='-admin/adminPass.jsp' method='post'>
                 <div class="container boxedWhite centered">
                     <br><h2>Please update your current password</h2><br>
                     <tr>

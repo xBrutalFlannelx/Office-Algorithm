@@ -10,7 +10,7 @@ based on options chosen in querySupplier.jsp
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="../adminCSS.css"/>
         <%@include file="../header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Confirmation</title>
@@ -32,8 +32,8 @@ based on options chosen in querySupplier.jsp
                     response.sendRedirect("querySupplier.jsp?message=error&name=" + name);
                 }
 
-                String stock = "select stock.stockID, stock.ordered, stock.available from stock "
-                        + "INNER JOIN supplierstock on stock.stockID = supplierstock.stockID where supplierstock.supplierID = '"
+                String stock = "select stock.stockID, stock.ordered, stock.available from office_algorithm.stock "
+                        + "INNER JOIN office_algorithm.supplierstock on stock.stockID = supplierstock.stockID where supplierstock.supplierID = '"
                         + supplierID + "' and stock.item = '" + item + "'";
 
                 ResultSet stockSet = dbConnect.DBQuery(stock);
@@ -51,7 +51,7 @@ based on options chosen in querySupplier.jsp
                     int orderInput = Integer.parseInt(quantity);
                     int orderSum = orderedDB + orderInput;
 
-                    String update = "update stock set ordered = '" + orderSum + "' where stockID = '"
+                    String update = "update office_algorithm.stock set ordered = '" + orderSum + "' where stockID = '"
                             + stockSet.getString(1) + "'";
                     String message = dbConnect.updateDB(update);
 
@@ -64,7 +64,7 @@ based on options chosen in querySupplier.jsp
                 if (option.equals("confirmAdjust")) {
 
                     int availInput = Integer.parseInt(quantity);
-                    String update = "update stock set available = '" + availInput + "' where stockID = '"
+                    String update = "update office_algorithm.stock set available = '" + availInput + "' where stockID = '"
                             + stockSet.getString(1) + "'";
                     String message = dbConnect.updateDB(update);
 
@@ -76,9 +76,9 @@ based on options chosen in querySupplier.jsp
                 //delete stock after confirmation accepted
                 if (option.equals("confirmDelete")) {
 
-                    String deleteSupplierStock = "delete from supplierstock where stockID = '"
+                    String deleteSupplierStock = "delete from office_algorithm.supplierstock where stockID = '"
                             + stockSet.getString(1) + "' and supplierID = '" + supplierID + "'";
-                    String deleteStock = "delete from stock where stockID = '"
+                    String deleteStock = "delete from office_algorithm.stock where stockID = '"
                             + stockSet.getString(1) + "'";
 
                     String message2 = dbConnect.updateDB(deleteSupplierStock);

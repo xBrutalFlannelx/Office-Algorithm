@@ -11,7 +11,7 @@ with option to approve/deny account
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/OfficeAlgorithm/adminCSS.css"/>
+        <link rel="stylesheet" href="../adminCSS.css"/>
         <%@include file="../header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Pending Suppliers</title>
@@ -26,7 +26,7 @@ with option to approve/deny account
                     out.print("<h2 class='centered'><br>" + message + "</h2>");
                 }
                 //list hyperlinks of all pending supplier accounts
-                ResultSet pending = dbConnect.DBQuery("Select Name FROM Supplier where Status = 'Pending'");
+                ResultSet pending = dbConnect.DBQuery("Select Name FROM office_algorithm.supplier where Status = 'Pending'");
 
                 if (!pending.next()) {
                     out.print("<br><div class='container boxedTitle lightToDarkBottom' style='color:white'><br><h1>No Pending Accounts</h1><br></div><br>");
