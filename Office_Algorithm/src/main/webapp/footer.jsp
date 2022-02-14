@@ -10,18 +10,17 @@
         <br>  
         <p style="font-size: 20px">Welcome to Office Algorithm!</p>
         <br> 
-        <p style="font-size: 20px">This my final undergrad project deployed in AWS.</p>
+        <p style="font-size: 20px">This my final undergrad project deployed in Amazon Web Services.</p>
         <br>
         <p>This office supply store has three user types: Admin, Customer, and Supplier.</p>
         <p>Currently customers and suppliers can only create accounts and login.</p>
-        <p>Admin must approve new supplier accounts. This user type can create additional admin accounts.</p>
-        <p>Admin can modify, cancel, and mark customer orders as shipped.</p>
-        <p>Admin can order, adjust and delete inventory from approved suppliers.</p>
+        <p>Admin must approve new supplier accounts, and create additional admin accounts.</p>
+        <p>Admin can modify, cancel, and ship Customer orders.</p>
+        <p>Admin can order, adjust, and delete inventory from approved Suppliers.</p>
         <p>Username: admin</p>
         <p>Password: Adminadmin1</p>
         <p>Database diagram can be found at the bottom of the page.</p>
-        <a style="font-size: 20px; color: white;" href="https://github.com/xBrutalFlannelx/Office-Algorithm/tree/master/Office_Algorithm
-           ">Link to Source Code</a>
+        <a style="font-size: 20px; color: white; text-decoration: underline" href="https://github.com/xBrutalFlannelx/Office-Algorithm">Click Here for Source Code</a>
         <br>
         <br>
     </div>
@@ -36,6 +35,9 @@
         <p style="font-size: 20px;"><b><i><u>Database Diagram</u></i></b></p>
         <br>
         <img src="diagram.png" alt="Office Algorithm" style="width:750px; height:750x;"%>
+        <br>
+        <br>
+        <br>
     </div>
 
 </div>
