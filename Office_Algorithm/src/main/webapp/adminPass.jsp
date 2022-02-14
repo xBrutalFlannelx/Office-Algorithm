@@ -9,8 +9,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../adminCSS.css"/>
-        <%@include file="../header.jsp" %>
+        <link rel="stylesheet" href="adminCSS.css"/>
+        <%@include file="header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Update Password</title>
     </head>
@@ -30,17 +30,17 @@
                 //body onload auto redirects
                 if (message.equals("Update Successful")) {
             %>
-            <form name='adminLogin' action='../loginAction.jsp' method='post'>
+            <form name='adminLogin' action='loginAction.jsp' method='post'>
                 <input type="hidden" id="username" name="username" value="<%=username%>">
                 <input type="hidden" id="password" name="password" value="<%=newPass%>">
             </form>
             <body onload="document.adminLogin.submit()">
                 <%
                     } else {
-                        response.sendRedirect("../login.jsp?error=password");
+                        response.sendRedirect("login.jsp?error=password");
                     }
                 %>
-                <%@include file="../footer.jsp" %>
+                <%@include file="footer.jsp" %>
         </div>
     </body>
 </html>

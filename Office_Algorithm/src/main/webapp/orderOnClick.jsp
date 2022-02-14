@@ -11,8 +11,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../adminCSS.css"/>
-        <%@include file="../header.jsp" %>
+        <link rel="stylesheet" href="adminCSS.css"/>
+        <%@include file="header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Edit Order</title>
     </head>
@@ -167,7 +167,7 @@
                 </div>
                 <%}%>
             <br>
-            <%@include file="../footer.jsp" %>
+            <%@include file="footer.jsp" %>
         </div>
     </body>
 </html>

@@ -10,8 +10,8 @@ clicking on a name leads to querySupplier.jsp to manage/order stock
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../adminCSS.css"/>
-        <%@include file="../header.jsp" %>
+        <link rel="stylesheet" href="adminCSS.css"/>
+        <%@include file="header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Approved Suppliers</title>
     </head>
@@ -43,7 +43,7 @@ clicking on a name leads to querySupplier.jsp to manage/order stock
                 <br>
             </div>
             <%}%>
-            <%@include file="../footer.jsp" %>
+            <%@include file="footer.jsp" %>
         </div>
     </body>
 </html>

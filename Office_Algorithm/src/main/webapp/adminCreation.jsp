@@ -9,9 +9,9 @@ Display input fields for admin to create another admin account
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../adminCSS.css"/>
-        <%@include file="../header.jsp" %>
-        <script src="../password.js"></script>
+        <link rel="stylesheet" href="adminCSS.css"/>
+        <%@include file="header.jsp" %>
+        <script src="password.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Create Admin Account</title>
     </head>
@@ -71,7 +71,7 @@ Display input fields for admin to create another admin account
                 </form>
                 <br>
             </div>
-            <%@include file="../footer.jsp" %>
+            <%@include file="footer.jsp" %>
         </div>
     </body>
 </html>

@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="jumbotron-fluid midLightToMidDark text-light">
-        <img src="-images/logo.jpg" alt="Office Algorithm" style="width:125px; height:125x;"%>
+        <img src="logo.jpg" alt="Office Algorithm" style="width:125px; height:125x;"%>
         <h3 class='display-3' style="display: inline-block; vertical-align: bottom; font-size: 80px"> Office Algorithm</h3>
         <%
             String logged = (String) session.getAttribute("logged");
@@ -44,15 +44,15 @@
                 } else if (logged == "admin") {
                     // If logged in display new page options
                     out.print("<li class='nav-item'>"
-                            + "<a class='nav-link' href='../-admin/adminAction.jsp'>" + user + " Home</a></li>"
+                            + "<a class='nav-link' href='adminAction.jsp'>" + user + " Home</a></li>"
                             + "<li class='nav-item'>"
-                            + "<a class='nav-link' href='../-supplier/approvedSupplier.jsp'>Approved Suppliers</a></li>"
+                            + "<a class='nav-link' href='approvedSupplier.jsp'>Approved Suppliers</a></li>"
                             + "<li class='nav-item'>"
-                            + "<a class='nav-link' href='../-supplier/pendingSupplier.jsp'>Pending Suppliers</a></li>"
+                            + "<a class='nav-link' href='pendingSupplier.jsp'>Pending Suppliers</a></li>"
                             + "<li class='nav-item'>"
-                            + "<a class='nav-link' href='../-customer/queryCustomer.jsp'>Customer Orders</a></li>"
+                            + "<a class='nav-link' href='queryCustomer.jsp'>Customer Orders</a></li>"
                             + "<li class='nav-item'>"
-                            + "<a class='nav-link' href='-admin/adminCreation.jsp'>Admin Creation</a></li>"
+                            + "<a class='nav-link' href='adminCreation.jsp'>Admin Creation</a></li>"
                             + "<li class='nav-item'>"
                             + "<a class='nav-link' href='logout.jsp'>Logout</a></li>");
                     //customer and supplier home currently redirect to index         

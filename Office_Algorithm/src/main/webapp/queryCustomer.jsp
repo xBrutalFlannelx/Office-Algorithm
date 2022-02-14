@@ -10,8 +10,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../adminCSS.css"/>
-        <%@include file="../header.jsp" %>
+        <link rel="stylesheet" href="adminCSS.css"/>
+        <%@include file="header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Customers</title>
     </head>
@@ -48,7 +48,7 @@
                     <br>
                 </table>
             </div>
-            <%@include file="../footer.jsp" %>
+            <%@include file="footer.jsp" %>
         </div>
     </body>
 </html>

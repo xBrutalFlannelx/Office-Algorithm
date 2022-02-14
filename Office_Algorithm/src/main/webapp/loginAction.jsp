@@ -43,7 +43,7 @@ Currently Suppliers/Customers can only create accounts, login and logout
                         session.setAttribute("logged", "admin");
                         session.setAttribute("username", username);
                         session.setAttribute("sessionID", admin.getString(1));
-                        response.sendRedirect("-admin/adminAction.jsp");
+                        response.sendRedirect("adminAction.jsp");
                         return;
                     }
 
@@ -85,7 +85,7 @@ Currently Suppliers/Customers can only create accounts, login and logout
                 }
                 //pending admin requires password change to proceed
             %>
-            <form name='updatePass' action='-admin/adminPass.jsp' method='post'>
+            <form name='updatePass' action='adminPass.jsp' method='post'>
                 <div class="container boxedWhite centered">
                     <br><h2>Please update your current password</h2><br>
                     <tr>

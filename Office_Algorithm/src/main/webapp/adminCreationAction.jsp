@@ -11,8 +11,8 @@ insert pending admin in DB
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../adminCSS.css"/>
-        <%@include file="../header.jsp" %>
+        <link rel="stylesheet" href="adminCSS.css"/>
+        <%@include file="header.jsp" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Create new admin</title>
     </head>
@@ -44,7 +44,7 @@ insert pending admin in DB
                     }
                 }
             %>
-            <%@include file="../footer.jsp" %>
+            <%@include file="footer.jsp" %>
         </div>
     </body>
 </html>

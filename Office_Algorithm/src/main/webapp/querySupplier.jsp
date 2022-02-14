@@ -12,8 +12,8 @@ pendingOnClick.jsp/approvedOnClick.jsp update DB accordingly
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../adminCSS.css"/>
-        <%@include file="../header.jsp" %>
+        <link rel="stylesheet" href="adminCSS.css"/>
+        <%@include file="header.jsp" %>
         <script src="../password.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Supplier Information</title>
@@ -165,7 +165,7 @@ pendingOnClick.jsp/approvedOnClick.jsp update DB accordingly
                 <br>
             </div>
             <%}%>
-            <%@include file="../footer.jsp" %>
+            <%@include file="footer.jsp" %>
         </div>
     </body>
 </html>
