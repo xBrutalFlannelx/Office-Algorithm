@@ -53,28 +53,31 @@
                         </tr>
                         <tr>
                         <label class='inputLabel'>Username:</label>
-                        <input class='form-control center-input' type="text" name="username" size="40" required/>
+                        <input class='form-control center-input' type="text" name="username" size="30" 
+                               pattern="(?=.*\d)(?=.*[a-z]).{6,}" title="Minimum 6 characters \n Lowercase letters and numbers only" required/>
                         </tr>
                         <tr>
                         <label class='inputLabel'>First Name:</label>
-                        <input class='form-control center-input' type="text" name="first" size="40" required/>
+                        <input class='form-control center-input' type="text" name="first" size="20" 
+                               pattern="(?=.*[a-z])(?=.*[A-Z]).{2,}" title="Minimum 2 characters \n Letters only" required/>
                         </tr>
                         <tr>
                         <label class='inputLabel'>Last Name:</label>
-                        <input class='form-control center-input' type="text" name="last" size="40" required/>
+                        <input class='form-control center-input' type="text" name="last" size="20" 
+                               pattern="(?=.*[a-z])(?=.*[A-Z]).{2,}" title="Minimum 2 characters \n Letters only" required/>
                         </tr>
                         <tr>
                         <label class='inputLabel'>Payment Method:</label>
-                        <input class='form-control center-input' type="number" name="pay" id="pay" size="40" required/>
+                        <input class='form-control center-input' type="number" name="pay" id="pay" size="25" required/>
                         </tr>
                         <tr>
                         <label class='inputLabel'>Password:</label>
-                        <input class='form-control center-input' type="password" name="newPass" id="custPass" size="40" 
+                        <input class='form-control center-input' type="password" name="newPass" id="custPass" size="30" 
                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                         </tr>
                         <tr>
                         <label class='inputLabel'>Confirm Password:</label>
-                        <input class='form-control center-input' type="password" name="confirmPass" id="custConfirm" size="40" 
+                        <input class='form-control center-input' type="password" name="confirmPass" id="custConfirm" size="30" 
                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                         </tr>
                         <br>
@@ -94,20 +97,22 @@
                         </tr>
                         <tr>
                         <label class='inputLabel'>Company Name:</label>
-                        <input class='form-control center-input' type="text" name="company" size="40" required/>
+                        <input class='form-control center-input' type="text" name="company" size="30" 
+                               pattern="[a-zA-Z][a-zA-Z0-9\s]*" title="Letters, numbers and spaces only" required/>
                         </tr>
                         <tr>
                         <label class='inputLabel'>Username:</label>
-                        <input class='form-control center-input' type="text" name="username" size="40" required/>
+                        <input class='form-control center-input' type="text" name="username" size="30" 
+                               pattern="(?=.*\d)(?=.*[a-z]).{6,}" title="Minimum 6 characters \n Lowercase letters and numbers only" required/>
                         </tr>
                         <tr>
                         <label class='inputLabel'>Password:</label>
-                        <input class='form-control center-input' type="password" name="newPass" id="suppPass" size="40" 
+                        <input class='form-control center-input' type="password" name="newPass" id="suppPass" size="30" 
                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                         </tr>
                         <tr>
                         <label class='inputLabel'>Confirm Password:</label>
-                        <input class='form-control center-input' type="password" name="confirmPass" id="suppConfirm" size="40" 
+                        <input class='form-control center-input' type="password" name="confirmPass" id="suppConfirm" size="30" 
                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"required>
                         </tr>
                         <br>

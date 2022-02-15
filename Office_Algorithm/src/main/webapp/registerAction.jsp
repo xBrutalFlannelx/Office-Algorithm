@@ -131,9 +131,12 @@ form submits back to registerAction.jsp to add stock to DB
                             <th class="centered">Quantity Available</th>
                         </tr>
                         <tr>
-                            <td><input class='form-control center-input' style="width: 250px" id='item' name='item' type="text" size="30" required></td> 
-                            <td><input class='form-control center-input' style="width: 250px" id='cost' name='cost' type="text" size="10" required></td>
-                            <td><input class='form-control center-input' style="width: 250px" id='avail' name='avail' type="text" size="10" required></td>
+                            <td><input class='form-control center-input' style="width: 250px" id='item' name='item' type="text" size="30" 
+                                       pattern="[a-zA-Z][a-zA-Z0-9\s]*" title="Letters, numbers and spaces only" required></td> 
+                            <td><input class='form-control center-input' style="width: 250px" id='cost' name='cost' type="number" size="10" 
+                                       title="USD format (0.00)" step="0.01" min="0.01" required></td>
+                            <td><input class='form-control center-input' style="width: 250px" id='avail' name='avail' type="number" size="10" 
+                                       min="1" step="1" required></td>
                         </tr>
                     </table>
                     <br>

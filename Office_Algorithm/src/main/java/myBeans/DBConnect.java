@@ -4,13 +4,11 @@ import java.sql.*;
 
 public class DBConnect {
 
-
-    //String driver = "org.postgresql.Driver";
     String driver = "com.mysql.jdbc.Driver";
     String url = "jdbc:mysql://db-office-algorithm.cgdvjzyfe0ri.us-east-1.rds.amazonaws.com:3306/office_algorithm";
     String user = "bflanz";
     String pwd = "BF575CEA668DA492";
-    
+      
     Connection conn;
     Statement stm;
     ResultSet rst;
